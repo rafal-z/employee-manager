@@ -1,0 +1,10 @@
+.idea/
+*.iml
+#*.json
+node_modules/
+
+src/main/webapp/app
+src/main/webapp/index.html
+
+### Maven template
+target/
