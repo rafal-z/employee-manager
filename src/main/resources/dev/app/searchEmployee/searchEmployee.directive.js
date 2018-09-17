@@ -1,5 +1,5 @@
 angular
-    .module('employee-manager')
+    .module('em.search')
     .directive('searchEmployee', searchEmployee);
 
 function searchEmployee() {

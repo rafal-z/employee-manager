@@ -1,5 +1,5 @@
 angular
-    .module('employee-manager')
+    .module('em.employee')
     .controller('employeeListController', employeeListController);
 
 function employeeListController($scope, $http, employeeService) {

@@ -1,5 +1,9 @@
 'use strict';
 
 angular.module('employee-manager', [
-    'ngRoute'
+    'ngRoute',
+    'pascalprecht.translate',
+    'em.search',
+    'em.employee',
+    'em.common'
 ]);

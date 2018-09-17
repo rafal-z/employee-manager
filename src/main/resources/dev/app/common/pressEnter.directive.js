@@ -1,5 +1,5 @@
 angular
-    .module('employee-manager')
+    .module('em.common')
     .directive('pressEnter', pressEnter);
 
 function pressEnter() {

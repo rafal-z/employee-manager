@@ -20,7 +20,8 @@ gulp.task('clean', function (callback) {
 });
 
 gulp.task('create-js', function () {
-    return gulp.src('app/**/*.js')
+    //                            ważna kolejność ładowania plików
+    return gulp.src(["app/app.js","app/app.config.js","app/app.routes.js", "app/**/*.module.js","app/**/*.js"])
         .pipe(concat('app.js'))
         .pipe(gulp.dest(appDistDir));
 });
@@ -45,8 +46,8 @@ gulp.task('create-css', function () {
 
 gulp.task('copy-resources', function () {
     var appHtml = gulp.src(['app/**/*.html']).pipe(gulp.dest(appDistDir));
-    var cssHtml = gulp.src(['app/**/dedede.css']).pipe(gulp.dest(appDistDir));
-    return merge(appHtml, cssHtml);
+    var localeJSONs = gulp.src(['../locale-*.json']).pipe(gulp.dest(appDistDir));
+    return merge(appHtml, localeJSONs);
 });
 
 gulp.task('copy-index', function () {

@@ -1,5 +1,5 @@
 angular
-    .module('employee-manager')
+    .module('em.employee')
     .service('employeeService', employeeService);
 
 function employeeService($http) {
