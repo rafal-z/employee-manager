@@ -8,8 +8,10 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import pl.com.employeemanager.model.Person;
 
+@Repository
 public class PersonDAOImpl implements PersonDAO {
 
     @Autowired

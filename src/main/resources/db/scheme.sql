@@ -9,9 +9,9 @@ CREATE TABLE Person (
 	PlaceOfBrith varchar,
 	CellPhone varchar(20),
 	Email varchar(50),
-	InsertDate DATETIME,
+	InsertDate TIMESTAMP,
 	InsertingPerson integer,
-	LastModDate DATETIME,
+	LastModDate TIMESTAMP,
 	LastModPerson integer,
 	CONSTRAINT Person_pk PRIMARY KEY (PersonID)
 ) WITH (
@@ -33,9 +33,9 @@ CREATE TABLE Address (
 	PostOffice varchar(30),
 	Country varchar,
 	Active BOOLEAN,
-	InsertDate DATETIME,
+	InsertDate TIMESTAMP,
 	InsertingPerson integer,
-	LastModDate DATETIME,
+	LastModDate TIMESTAMP,
 	LastModPerson integer,
 	CONSTRAINT Address_pk PRIMARY KEY (AddressID)
 ) WITH (
@@ -48,9 +48,9 @@ CREATE TABLE LAddressPerson (
 	LAddressPerson serial NOT NULL,
 	AddressID integer NOT NULL,
 	PersonID integer NOT NULL,
-	InsertDate DATETIME,
+	InsertDate TIMESTAMP,
 	InsertingPerson integer,
-	LastModDate DATETIME,
+	LastModDate TIMESTAMP,
 	LastModPerson integer,
 	CONSTRAINT LAddressPerson_pk PRIMARY KEY (LAddressPerson)
 ) WITH (
@@ -63,9 +63,9 @@ CREATE TABLE Employee (
 	EmployeeID serial NOT NULL,
 	PersonID integer NOT NULL,
 	Active BOOLEAN,
-	InsertDate DATETIME,
+	InsertDate TIMESTAMP,
 	InsertingPerson integer,
-	LastModDate DATETIME,
+	LastModDate TIMESTAMP,
 	LastModPerson integer,
 	CONSTRAINT Employee_pk PRIMARY KEY (EmployeeID)
 ) WITH (
@@ -77,9 +77,15 @@ CREATE TABLE Employee (
 ALTER TABLE Person ADD CONSTRAINT Person_fk0 FOREIGN KEY (InsertingPerson) REFERENCES Person(PersonID);
 ALTER TABLE Person ADD CONSTRAINT Person_fk1 FOREIGN KEY (LastModPerson) REFERENCES Person(PersonID);
 
+ALTER TABLE Address ADD CONSTRAINT Address_fk0 FOREIGN KEY (InsertingPerson) REFERENCES Person(PersonID);
+ALTER TABLE Address ADD CONSTRAINT Address_fk1 FOREIGN KEY (LastModPerson) REFERENCES Person(PersonID);
 
 ALTER TABLE LAddressPerson ADD CONSTRAINT LAddressPerson_fk0 FOREIGN KEY (AddressID) REFERENCES Address(AddressID);
 ALTER TABLE LAddressPerson ADD CONSTRAINT LAddressPerson_fk1 FOREIGN KEY (PersonID) REFERENCES Person(PersonID);
+ALTER TABLE LAddressPerson ADD CONSTRAINT LAddressPerson_fk2 FOREIGN KEY (InsertingPerson) REFERENCES Person(PersonID);
+ALTER TABLE LAddressPerson ADD CONSTRAINT LAddressPerson_fk3 FOREIGN KEY (LastModPerson) REFERENCES Person(PersonID);
 
 ALTER TABLE Employee ADD CONSTRAINT Employee_fk0 FOREIGN KEY (PersonID) REFERENCES Person(PersonID);
+ALTER TABLE Employee ADD CONSTRAINT Employee_fk1 FOREIGN KEY (InsertingPerson) REFERENCES Person(PersonID);
+ALTER TABLE Employee ADD CONSTRAINT Employee_fk2 FOREIGN KEY (LastModPerson) REFERENCES Person(PersonID);
 

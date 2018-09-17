@@ -1,10 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    LISTA PRACOWNIKÓW {{vm.text}}
-</body>
-</html>
+<div class="list-employee-background">
+    <search-employee
+            search-function="employeeListController.search">
+    </search-employee>
+
+    <div class="container-panel" ng-repeat="employee in employeeListController.employeeDS">
+        <div class="panel">
+            <div class="panel-header">
+                {{employee.firstName}} {{employee.lastName}}
+            </div>
+            <div class="panel-content">
+                <div class="row">
+                    <div class="col">
+                        {{employee.email}}
+                    </div>
+                    <div class="col">
+                        online
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        tel: {{employee.cellPhone}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        pokój: 111
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

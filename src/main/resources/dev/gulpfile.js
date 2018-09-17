@@ -25,9 +25,27 @@ gulp.task('create-js', function () {
         .pipe(gulp.dest(appDistDir));
 });
 
+gulp.task('create-lib-js', function () {
+    return gulp.src('node_modules/**/*.js')
+        .pipe(concat('lib.js'))
+        .pipe(gulp.dest(appDistDir));
+});
+
+gulp.task('create-lib-css', function () {
+    return gulp.src('node_modules/**/*.css')
+        .pipe(concat('lib.css'))
+        .pipe(gulp.dest(appDistDir));
+});
+
+gulp.task('create-css', function () {
+    return gulp.src('app/**/*.css')
+        .pipe(concat('app.css'))
+        .pipe(gulp.dest(appDistDir));
+});
+
 gulp.task('copy-resources', function () {
     var appHtml = gulp.src(['app/**/*.html']).pipe(gulp.dest(appDistDir));
-    var cssHtml = gulp.src(['app/**/*.css']).pipe(gulp.dest(appDistDir));
+    var cssHtml = gulp.src(['app/**/dedede.css']).pipe(gulp.dest(appDistDir));
     return merge(appHtml, cssHtml);
 });
 
@@ -38,5 +56,8 @@ gulp.task('copy-index', function () {
 gulp.task('build-debug', [
     'copy-index',
     'copy-resources',
-    'create-js'
+    'create-js',
+    'create-lib-css',
+    'create-lib-js',
+    'create-css'
 ]);

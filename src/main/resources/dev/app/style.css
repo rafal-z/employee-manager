@@ -1,0 +1,37 @@
+.list-employee-background {
+    background-color: #bfc2c4;
+    height: 100%;
+}
+
+/*------->Data panel<--------*/
+.container-panel {
+    padding-left: 15px;
+    padding-top: 15px;
+}
+
+.panel {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 5px 0px;
+    height: 150px;
+    width: 431px;
+    background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;
+}
+
+.panel-header {
+    box-shadow: rgba(255, 255, 255, 0.12) 0px 1px 0px 0px;
+    color: rgb(125, 125, 125);
+    height: 44px;background: rgb(245, 245, 245) none repeat scroll 0% 0% / auto padding-box border-box;border-bottom: 1px solid rgb(221, 221, 221);border-radius: 3px 3px 0 0;
+    font: normal normal 400 normal 16px / 16px Roboto, sans-serif;
+    padding: 14px 22px;
+}
+
+.panel-content {
+    color: rgb(125, 125, 125);
+    height: 120px;
+    font: normal normal 400 normal 14px / 16px Roboto, sans-serif;
+    padding: 15px 22px;
+}
+
+.row {
+    padding: 5px 0px 0px 0px;
+}
+/*------->Data panel<--------*/

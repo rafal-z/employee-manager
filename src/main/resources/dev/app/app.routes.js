@@ -5,7 +5,9 @@ app.config(config);
 function config($routeProvider) {
     $routeProvider
         .when('/employeeList', {
-            templateUrl: 'app/employeeList/mainTestView.html'
+            controller: 'employeeListController',
+            controllerAs: 'employeeListController',
+            templateUrl: 'app/employeeList/employeeList.html'
         })
         .otherwise({redirectTo: '/employeeList'})
 }
