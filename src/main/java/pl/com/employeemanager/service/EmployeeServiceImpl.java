@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import pl.com.employeemanager.dao.EmployeeDAO;
 import pl.com.employeemanager.dto.EmployeeBaseDTO;
 import pl.com.employeemanager.dto.EmployeeCriteriaDTO;
+import pl.com.employeemanager.dto.EmployeeFullDTO;
+import pl.com.employeemanager.mapper.EmployeeFullDTOMapper;
 import pl.com.employeemanager.mapper.EmployeeMapper;
 import pl.com.employeemanager.model.Employee;
 
@@ -18,6 +20,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Autowired
     EmployeeMapper employeeMapper;
 
+    @Autowired
+    EmployeeFullDTOMapper employeeFullDTOMapper;
+
     @Override
     public List<Employee> getEmployees() {
         return employeeDAO.list();
@@ -26,6 +31,12 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public List<EmployeeBaseDTO> getEmployees(EmployeeCriteriaDTO criteria){
         List<Employee> employees = employeeDAO.getEmployees(criteria);
-        return employeeMapper.repack(employees);
+        return employeeMapper.repackList(employees);
+    }
+
+    @Override
+    public EmployeeFullDTO getEmployee(Integer personId){
+        Employee employee = employeeDAO.getEmployee(personId);
+        return employeeFullDTOMapper.repack(employee);
     }
 }

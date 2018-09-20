@@ -49,4 +49,11 @@ public class EmployeeDAOImpl implements EmployeeDAO{
             criteria.add(Restrictions.ilike("nationalNo", employeeCriteriaDTO.getNationalNo()));
         }
     }
+
+    public Employee getEmployee(Integer personId){
+        Session session = sessionFactory.openSession();
+        Employee employee = (Employee) session.get(Employee.class, personId);
+        session.close();
+        return employee;
+    }
 }

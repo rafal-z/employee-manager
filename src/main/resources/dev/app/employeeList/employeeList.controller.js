@@ -2,10 +2,11 @@ angular
     .module('em.employee')
     .controller('employeeListController', employeeListController);
 
-function employeeListController($scope, $http, employeeService) {
+function employeeListController($scope, $http, $location, employeeService) {
     var vm = this;
 
     vm.search = search;
+    vm.goToDetails = goToDetails;
 
     vm.employeeDS = [];
 
@@ -30,5 +31,10 @@ function employeeListController($scope, $http, employeeService) {
             if(res[1]){ crit.firstName = res[1];}
         }
         return crit;
+    }
+
+    function goToDetails(personId) {
+        employeeService.setPersonId(personId);
+        $location.url('/employeeDetails');
     }
 }

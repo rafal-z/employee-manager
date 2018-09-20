@@ -1,6 +1,7 @@
 package pl.com.employeemanager.mapper;
 
 import org.springframework.stereotype.Component;
+import pl.com.employeemanager.dao.EmployeeDAO;
 import pl.com.employeemanager.dto.EmployeeBaseDTO;
 import pl.com.employeemanager.model.Employee;
 
@@ -9,37 +10,33 @@ import java.util.List;
 
 @Component
 public class EmployeeMapper {
-    public List<EmployeeBaseDTO> repack(final List<Employee> from){
+    public List<EmployeeBaseDTO> repackList(final List<Employee> from){
         List<EmployeeBaseDTO> to = new ArrayList<>();
         for(Employee employee : from){
-            EmployeeBaseDTO employeeDTO = new EmployeeBaseDTO();
-            employeeDTO.setPersonId(employee.getPersonId());
-            employeeDTO.setFirstName(employee.getFirstName());
-            employeeDTO.setLastName(employee.getLastName());
-            employeeDTO.setNationalNo(employee.getNationalNo());
-            employeeDTO.setDob(employee.getDob());
-            employeeDTO.setSex(employee.getSex());
-            employeeDTO.setCellPhone(employee.getCellPhone());
-            employeeDTO.setEmail(employee.getEmail());
-            to.add(employeeDTO);
+            to.add(repack(employee));
         }
         return to;
     }
 
-    public List<Employee> pack(final List<EmployeeBaseDTO> from){
-        List<Employee> to = new ArrayList<>();
-        for(EmployeeBaseDTO employeeDTO : from){
-            Employee employee = new Employee();
-            employee.setPersonId(employeeDTO.getPersonId());
-            employee.setFirstName(employeeDTO.getFirstName());
-            employee.setLastName(employeeDTO.getLastName());
-            employee.setNationalNo(employeeDTO.getNationalNo());
-            employee.setDob(employeeDTO.getDob());
-            employee.setSex(employeeDTO.getSex());
-            employee.setCellPhone(employeeDTO.getCellPhone());
-            employee.setEmail(employeeDTO.getEmail());
-            to.add(employee);
-        }
+    public EmployeeBaseDTO repack(final Employee from){
+        EmployeeBaseDTO to = new EmployeeBaseDTO();
+        to.setPersonId(from.getPersonId());
+        to.setFirstName(from.getFirstName());
+        to.setLastName(from.getLastName());
+        to.setSex(from.getSex());
+        to.setCellPhone(from.getCellPhone());
+        to.setEmail(from.getEmail());
+        return to;
+    }
+
+    public Employee pack(final EmployeeBaseDTO from){
+        Employee to = new Employee();
+        to.setPersonId(from.getPersonId());
+        to.setFirstName(from.getFirstName());
+        to.setLastName(from.getLastName());
+        to.setSex(from.getSex());
+        to.setCellPhone(from.getCellPhone());
+        to.setEmail(from.getEmail());
         return to;
     }
 }

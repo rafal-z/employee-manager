@@ -1,6 +1,12 @@
-.list-employee-background {
+.employee-maneger-body {
     background-color: #bfc2c4;
     height: 100%;
+}
+
+.container-search {
+    width: 50%;
+    padding-left: 15px;
+    padding-right: 15px
 }
 
 /*------->Data panel<--------*/
@@ -9,25 +15,35 @@
     padding-top: 15px;
 }
 
-.panel {
+.em-panel {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 5px 0px;
+    height: 100%;
+    width: 100%;
+    background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;
+}
+
+.details-panel {
     height: 150px;
     width: 431px;
-    background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;
+}
+
+.employee-panel{
+    height: 150px;
+    width: 750px;
 }
 
 .panel-header {
     box-shadow: rgba(255, 255, 255, 0.12) 0px 1px 0px 0px;
     color: rgb(125, 125, 125);
     height: 44px;background: rgb(245, 245, 245) none repeat scroll 0% 0% / auto padding-box border-box;border-bottom: 1px solid rgb(221, 221, 221);border-radius: 3px 3px 0 0;
-    font: normal normal 400 normal 16px / 16px Roboto, sans-serif;
+    font: normal normal 400 normal 17px / 16px Roboto, sans-serif;
     padding: 14px 22px;
 }
 
 .panel-content {
-    color: rgb(125, 125, 125);
+    /*color: rgb(125, 125, 125);*/
     height: 120px;
-    font: normal normal 400 normal 14px / 16px Roboto, sans-serif;
+    font: normal normal 400 normal 15px / 16px Roboto, sans-serif;
     padding: 15px 22px;
 }
 
@@ -35,3 +51,24 @@
     padding: 5px 0px 0px 0px;
 }
 /*------->Data panel<--------*/
+
+.circle-base{
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    float: left;
+    margin-top: 4px;
+    margin-right: 4px;
+}
+
+.circle-green{
+    background-color: #3b9b00;
+}
+
+.circle-red{
+    background-color: #ff0000;
+}
+
+.button-bar {
+    padding: 15px 15px 15px 15px;
+}

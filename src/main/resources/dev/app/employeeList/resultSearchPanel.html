@@ -1,0 +1,32 @@
+<div class="container-panel" ng-repeat="employee in employeeListController.employeeDS">
+    <div class="em-panel details-panel">
+        <div class="panel-header">
+            <a href="" ng-click="employeeListController.goToDetails(employee.personId)">
+                {{employee.firstName}} {{employee.lastName}}
+            </a>
+        </div>
+        <div class="panel-content">
+            <div class="row">
+                <div class="col-sm-8">
+                    <span class="glyphicon glyphicon-envelope"></span> {{employee.email}}
+                </div>
+                <div class="col-sm-4">
+                    <div class="circle-base circle-green"></div><div>online</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <span class="glyphicon glyphicon-earphone"></span> {{employee.cellPhone}}
+                </div>
+                <div class="col-sm-4">
+                    team:
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <span class="glyphicon glyphicon-map-marker"></span> 111
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

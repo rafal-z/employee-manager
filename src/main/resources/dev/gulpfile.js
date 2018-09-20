@@ -26,17 +26,17 @@ gulp.task('create-js', function () {
         .pipe(gulp.dest(appDistDir));
 });
 
-gulp.task('create-lib-js', function () {
-    return gulp.src('node_modules/**/*.js')
-        .pipe(concat('lib.js'))
-        .pipe(gulp.dest(appDistDir));
-});
-
-gulp.task('create-lib-css', function () {
-    return gulp.src('node_modules/**/*.css')
-        .pipe(concat('lib.css'))
-        .pipe(gulp.dest(appDistDir));
-});
+// gulp.task('create-lib-js', function () {
+//     return gulp.src('node_modules/**/*.js')
+//         .pipe(concat('lib.js'))
+//         .pipe(gulp.dest(appDistDir));
+// });
+//
+// gulp.task('create-lib-css', function () {
+//     return gulp.src('node_modules/**/*.css')
+//         .pipe(concat('lib.css'))
+//         .pipe(gulp.dest(appDistDir));
+// });
 
 gulp.task('create-css', function () {
     return gulp.src('app/**/*.css')
@@ -58,7 +58,7 @@ gulp.task('build-debug', [
     'copy-index',
     'copy-resources',
     'create-js',
-    'create-lib-css',
-    'create-lib-js',
+    // 'create-lib-css',
+    // 'create-lib-js',
     'create-css'
 ]);

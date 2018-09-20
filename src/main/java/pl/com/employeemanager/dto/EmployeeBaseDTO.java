@@ -1,13 +1,9 @@
 package pl.com.employeemanager.dto;
 
-import java.util.Date;
-
 public class EmployeeBaseDTO {
     private Integer personId;
     private String firstName;
     private String lastName;
-    private String nationalNo;
-    private Date dob;
     private String sex;
     private String cellPhone;
     private String email;
@@ -34,22 +30,6 @@ public class EmployeeBaseDTO {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public String getNationalNo() {
-        return nationalNo;
-    }
-
-    public void setNationalNo(String nationalNo) {
-        this.nationalNo = nationalNo;
-    }
-
-    public Date getDob() {
-        return dob;
-    }
-
-    public void setDob(Date dob) {
-        this.dob = dob;
     }
 
     public String getSex() {

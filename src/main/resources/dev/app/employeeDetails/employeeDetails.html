@@ -1,0 +1,136 @@
+<div>
+    <h2 class="container-panel">{{vm.employeeFullDS.firstName}} {{vm.employeeFullDS.middleName}} {{vm.employeeFullDS.lastName}}</h2>
+
+    <div class="container-panel">
+        <div class="em-panel employee-panel">
+            <div class="panel-header">
+                {{'title.details' | translate}}
+            </div>
+            <div class="panel-content">
+                <div class="row">
+                    <div class="col-sm-7">
+                        <span class="glyphicon glyphicon-envelope" data-toggle="tooltip" title="{{'tooltip.email' | translate}}"></span> {{vm.employeeFullDS.email}}
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="circle-base circle-green"></div><div>online</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-7">
+                        <span class="glyphicon glyphicon-earphone" data-toggle="tooltip" title="{{'tooltip.phone' | translate}}"></span> {{vm.employeeFullDS.cellPhone}}
+                    </div>
+                    <div class="col-sm-4">
+                        Stanowisko:
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-7">
+                        <span class="glyphicon glyphicon-map-marker" data-toggle="tooltip" title="{{'tooltip.room' | translate}}"></span> 111
+                    </div>
+                    <div class="col-sm-4">
+                        {{'team' | translate}}:
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-panel">
+        <div class="em-panel employee-panel">
+            <div class="panel-header">
+                {{'title.personalData' | translate}}
+            </div>
+            <div class="panel-content">
+                <div class="row">
+                    <div class="col-sm-4">
+                        {{'nationalNo' | translate}}: {{vm.employeeFullDS.nationalNo}}
+                    </div>
+                    <div class="col-sm-4">
+                        {{'dob' | translate}}: {{vm.employeeFullDS.dob | date : 'dd-MM-yyyy'}}
+                    </div>
+                    <div class="col-sm-4">
+                        {{'placeOfBrith' | translate}}: {{vm.employeeFullDS.placeOfBrith}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        {{'sex' | translate}}: {{vm.employeeFullDS.sex}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-panel">
+        <div class="em-panel employee-panel">
+            <div class="panel-header">
+                {{'title.address' | translate}}
+            </div>
+            <div class="panel-content">
+                <div class="row">
+                    <div class="col-sm-4">
+                        {{'street' | translate}}: {{vm.employeeFullDS.street}}
+                    </div>
+                    <div class="col-sm-4">
+                        {{'homeNo/flatNo' | translate}}: {{vm.employeeFullDS.homeNo}}/{{vm.employeeFullDS.flattNo}}
+                    </div>
+                    <div class="col-sm-4">
+                        {{'voivodship' | translate}}: {{vm.employeeFullDS.voivodship}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        {{'district' | translate}}: {{vm.employeeFullDS.district}}
+                    </div>
+                    <div class="col-sm-4">
+                        {{'place' | translate}}: {{vm.employeeFullDS.place}}
+                    </div>
+                    <div class="col-sm-4">
+                        {{'postalCode' | translate}}: {{vm.employeeFullDS.postalCode}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        {{'postOffice' | translate}}: {{vm.employeeFullDS.postOffice}}
+                    </div>
+                    <div class="col-sm-4">
+                        {{'country' | translate}} {{vm.employeeFullDS.country}}
+                    </div>
+                    <div class="col-sm-4">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-panel">
+        <div class="em-panel employee-panel">
+            <div class="panel-header">
+                {{'title.occupationalData' | translate}}
+            </div>
+            <div class="panel-content">
+                <div class="row">
+                    <div class="col-sm-4">
+                        {{'salary' | translate}}:
+                    </div>
+                    <div class="col-sm-4">
+                        {{'dateHired' | translate}}:
+                    </div>
+                    <div class="col-sm-4">
+                        {{'dateDismissal' | translate}}:
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="button-bar">
+        <button class="btn btn-secondary" type="button" ng-click="">{{'button.edit' | translate}} </button>
+    </div>
+</div>

@@ -8,4 +8,5 @@ import java.util.List;
 public interface EmployeeDAO {
     List<Employee> list();
     List<Employee> getEmployees(EmployeeCriteriaDTO criteria);
+    Employee getEmployee(Integer personId);
 }

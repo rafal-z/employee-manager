@@ -9,5 +9,8 @@ function config($routeProvider) {
             controllerAs: 'employeeListController',
             templateUrl: 'app/employeeList/employeeList.html'
         })
+        .when('/employeeDetails', {
+            template: '<employee-details></employee-details>'
+        })
         .otherwise({redirectTo: '/employeeList'})
 }
