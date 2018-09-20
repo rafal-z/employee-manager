@@ -3,7 +3,7 @@
   "search.placeholder": "Szukaj...",
   "button.edit": "Edytuj",
   "title.details": "Szczegóły",
-  "team": "Zespół",
+  "tooltip.team": "Zespół",
   "title.personalData": "Dane osobowe",
   "nationalNo": "PESEL",
   "dob": "Data ur.",
@@ -24,5 +24,7 @@
   "title.occupationalData": "Dane o zatrudnianiu",
   "salary": "Wynagrodzenie",
   "dateHired": "Data zatrudnienia",
-  "dateDismissal": "Data wypowiedzenia"
+  "dateDismissal": "Data wypowiedzenia",
+  "tooltip.occupation": "Stanowisko",
+  "tooltip.online.offline": "Online/Offline"
 }

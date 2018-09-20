@@ -6,32 +6,7 @@
             <div class="panel-header">
                 {{'title.details' | translate}}
             </div>
-            <div class="panel-content">
-                <div class="row">
-                    <div class="col-sm-7">
-                        <span class="glyphicon glyphicon-envelope" data-toggle="tooltip" title="{{'tooltip.email' | translate}}"></span> {{vm.employeeFullDS.email}}
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="circle-base circle-green"></div><div>online</div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-7">
-                        <span class="glyphicon glyphicon-earphone" data-toggle="tooltip" title="{{'tooltip.phone' | translate}}"></span> {{vm.employeeFullDS.cellPhone}}
-                    </div>
-                    <div class="col-sm-4">
-                        Stanowisko:
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-7">
-                        <span class="glyphicon glyphicon-map-marker" data-toggle="tooltip" title="{{'tooltip.room' | translate}}"></span> 111
-                    </div>
-                    <div class="col-sm-4">
-                        {{'team' | translate}}:
-                    </div>
-                </div>
-            </div>
+            <details-data-content-panel employee="vm.employeeFullDS"></details-data-content-panel>
         </div>
     </div>
 
@@ -112,13 +87,13 @@
             <div class="panel-content">
                 <div class="row">
                     <div class="col-sm-4">
-                        {{'salary' | translate}}:
+                        {{'salary' | translate}}: {{vm.employeeFullDS.salary}} {{vm.employeeFullDS.currency}}
                     </div>
                     <div class="col-sm-4">
-                        {{'dateHired' | translate}}:
+                        {{'dateHired' | translate}}: {{vm.employeeFullDS.dateHired | date : 'dd-MM-yyyy'}}
                     </div>
                     <div class="col-sm-4">
-                        {{'dateDismissal' | translate}}:
+                        {{'dateDismissal' | translate}}: {{vm.employeeFullDS.dateDismissal || '---' | date : 'dd-MM-yyyy'}}
                     </div>
                 </div>
                 <div class="row">

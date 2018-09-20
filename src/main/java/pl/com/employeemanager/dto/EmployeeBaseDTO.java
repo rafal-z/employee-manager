@@ -7,6 +7,11 @@ public class EmployeeBaseDTO {
     private String sex;
     private String cellPhone;
     private String email;
+    private boolean active;
+    private String roomNo;
+    private Boolean online;
+    private String occupation;
+    private String team;
 
     public Integer getPersonId() {
         return personId;
@@ -54,5 +59,45 @@ public class EmployeeBaseDTO {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public String getRoomNo() {
+        return roomNo;
+    }
+
+    public void setRoomNo(String roomNo) {
+        this.roomNo = roomNo;
+    }
+
+    public Boolean getOnline() {
+        return online;
+    }
+
+    public void setOnline(Boolean online) {
+        this.online = online;
+    }
+
+    public String getOccupation() {
+        return occupation;
+    }
+
+    public void setOccupation(String occupation) {
+        this.occupation = occupation;
+    }
+
+    public String getTeam() {
+        return team;
+    }
+
+    public void setTeam(String team) {
+        this.team = team;
     }
 }

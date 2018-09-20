@@ -19,6 +19,15 @@ public class EmployeeFullDTOMapper {
         to.setSex(from.getSex());
         to.setCellPhone(from.getCellPhone());
         to.setEmail(from.getEmail());
+        to.setActive(from.isActive());
+        to.setRoomNo(from.getRoomNo());
+        to.setOnline(from.isOnline());
+        to.setSalary(from.getSalary());
+        to.setCurrency(from.getCurrency());
+        to.setOccupation(from.getOccupation());
+        to.setTeam(from.getTeam());
+        to.setDateHired(from.getDateHired());
+        to.setDateDismissal(from.getDateDismissal());
 
         for(Address address : from.getAddress()){
             if(address.getAddressTypeId() == 1){

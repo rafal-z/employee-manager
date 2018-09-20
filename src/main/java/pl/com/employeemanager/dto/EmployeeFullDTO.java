@@ -18,6 +18,11 @@ public class EmployeeFullDTO extends EmployeeBaseDTO {
     private String postOffice;
     private String country;
 
+    private Double salary;
+    private String currency;
+    private Date dateHired;
+    private Date dateDismissal;
+
     public String getMiddleName() {
         return middleName;
     }
@@ -120,5 +125,37 @@ public class EmployeeFullDTO extends EmployeeBaseDTO {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public Double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(Double salary) {
+        this.salary = salary;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
+
+    public Date getDateHired() {
+        return dateHired;
+    }
+
+    public void setDateHired(Date dateHired) {
+        this.dateHired = dateHired;
+    }
+
+    public Date getDateDismissal() {
+        return dateDismissal;
+    }
+
+    public void setDateDismissal(Date dateDismissal) {
+        this.dateDismissal = dateDismissal;
     }
 }

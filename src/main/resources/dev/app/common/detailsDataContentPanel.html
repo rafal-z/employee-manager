@@ -1,0 +1,26 @@
+<div class="panel-content">
+    <div class="row">
+        <div class="line-content col-sm-7">
+            <span class="glyphicon glyphicon-envelope" data-toggle="tooltip" title="{{'tooltip.email' | translate}}"></span> {{vm.employee.email}}
+        </div>
+        <div class="line-content col-sm-4">
+            <span class="glyphicon glyphicon-globe" ng-class="vm.getOnlineCss(vm.employee.online)" data-toggle="tooltip" title="{{'tooltip.online.offline' | translate}}"></span> {{vm.getOnlineStr(vm.employee.online)}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="line-content col-sm-7">
+            <span class="glyphicon glyphicon-earphone" data-toggle="tooltip" title="{{'tooltip.phone' | translate}}"></span> {{vm.employee.cellPhone}}
+        </div>
+        <div class="line-content col-sm-4">
+            <span class="glyphicon glyphicon-user" data-toggle="tooltip" title="{{'tooltip.team' | translate}}"></span>  {{vm.employee.team}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="line-content col-sm-7">
+            <span class="glyphicon glyphicon-map-marker" data-toggle="tooltip" title="{{'tooltip.room' | translate}}"></span> {{vm.employee.roomNo}}
+        </div>
+        <div class="line-content col-sm-4">
+            <span class="glyphicon glyphicon-briefcase" data-toggle="tooltip" title="{{'tooltip.occupation' | translate}}"></span> {{vm.employee.occupation}}
+        </div>
+    </div>
+</div>

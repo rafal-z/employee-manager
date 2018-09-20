@@ -24,7 +24,7 @@
 
 .details-panel {
     height: 150px;
-    width: 431px;
+    width: 500px;
 }
 
 .employee-panel{
@@ -50,23 +50,23 @@
 .row {
     padding: 5px 0px 0px 0px;
 }
+
+.line-content{
+    white-space: nowrap;
+    overflow: hidden;
+}
 /*------->Data panel<--------*/
 
-.circle-base{
-    border-radius: 50%;
-    width: 8px;
-    height: 8px;
-    float: left;
-    margin-top: 4px;
-    margin-right: 4px;
+a {
+    color: #28a745 !important;
 }
 
 .circle-green{
-    background-color: #3b9b00;
+    color: #3b9b00;
 }
 
 .circle-red{
-    background-color: #ff0000;
+    color: #ff0000;
 }
 
 .button-bar {

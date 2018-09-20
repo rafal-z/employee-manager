@@ -11,10 +11,14 @@ function employeeListController($scope, $http, $location, employeeService) {
     vm.employeeDS = [];
 
     function search(str) {
-        employeeService.getEmployees(preparateCriteria(str))
-            .then(function (value) {
-                vm.employeeDS = value.data;
-            })
+        if(str.length > 0) {
+            employeeService.getEmployees(preparateCriteria(str))
+                .then(function (value) {
+                    vm.employeeDS = value.data;
+                })
+        } else {
+            vm.employeeDS = [];
+        }
     }
 
     function preparateCriteria(str) {

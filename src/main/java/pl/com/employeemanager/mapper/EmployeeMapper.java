@@ -1,7 +1,6 @@
 package pl.com.employeemanager.mapper;
 
 import org.springframework.stereotype.Component;
-import pl.com.employeemanager.dao.EmployeeDAO;
 import pl.com.employeemanager.dto.EmployeeBaseDTO;
 import pl.com.employeemanager.model.Employee;
 
@@ -26,6 +25,11 @@ public class EmployeeMapper {
         to.setSex(from.getSex());
         to.setCellPhone(from.getCellPhone());
         to.setEmail(from.getEmail());
+        to.setActive(from.isActive());
+        to.setRoomNo(from.getRoomNo());
+        to.setOnline(from.isOnline());
+        to.setOccupation(from.getOccupation());
+        to.setTeam(from.getTeam());
         return to;
     }
 
@@ -37,6 +41,11 @@ public class EmployeeMapper {
         to.setSex(from.getSex());
         to.setCellPhone(from.getCellPhone());
         to.setEmail(from.getEmail());
+        to.setActive(from.isActive());
+        to.setRoomNo(from.getRoomNo());
+        to.setOnline(from.getOnline());
+        to.setOccupation(from.getOccupation());
+        to.setTeam(from.getTeam());
         return to;
     }
 }

@@ -9,6 +9,14 @@ public class Employee extends Person{
     private Integer employeeId;
 
     private boolean active;
+    private String roomNo;
+    private boolean online;
+    private Double salary;
+    private String currency;
+    private String occupation;
+    private String team;
+    private Date dateHired;
+    private Date dateDismissal;
     private Date insertDate;
     private Integer insertingPerson;
     private Date lastModDate;
@@ -29,6 +37,70 @@ public class Employee extends Person{
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    public String getRoomNo() {
+        return roomNo;
+    }
+
+    public void setRoomNo(String roomNo) {
+        this.roomNo = roomNo;
+    }
+
+    public boolean isOnline() {
+        return online;
+    }
+
+    public void setOnline(boolean online) {
+        this.online = online;
+    }
+
+    public Double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(Double salary) {
+        this.salary = salary;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
+
+    public String getOccupation() {
+        return occupation;
+    }
+
+    public String getTeam() {
+        return team;
+    }
+
+    public void setTeam(String team) {
+        this.team = team;
+    }
+
+    public void setOccupation(String occupation) {
+        this.occupation = occupation;
+    }
+
+    public Date getDateHired() {
+        return dateHired;
+    }
+
+    public void setDateHired(Date dateHired) {
+        this.dateHired = dateHired;
+    }
+
+    public Date getDateDismissal() {
+        return dateDismissal;
+    }
+
+    public void setDateDismissal(Date dateDismissal) {
+        this.dateDismissal = dateDismissal;
     }
 
     public Date getInsertDate() {
