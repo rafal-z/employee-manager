@@ -44,32 +44,32 @@
             <div class="panel-content">
                 <div class="row">
                     <div class="col-sm-4">
-                        {{'street' | translate}}: {{vm.employeeFullDS.street}}
+                        {{'street' | translate}}: {{vm.employeeFullDS.address.street}}
                     </div>
                     <div class="col-sm-4">
-                        {{'homeNo/flatNo' | translate}}: {{vm.employeeFullDS.homeNo}}/{{vm.employeeFullDS.flattNo}}
+                        {{'homeNo/flatNo' | translate}}: {{vm.employeeFullDS.address.homeNo}}/{{vm.employeeFullDS.address.flattNo}}
                     </div>
                     <div class="col-sm-4">
-                        {{'voivodship' | translate}}: {{vm.employeeFullDS.voivodship}}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4">
-                        {{'district' | translate}}: {{vm.employeeFullDS.district}}
-                    </div>
-                    <div class="col-sm-4">
-                        {{'place' | translate}}: {{vm.employeeFullDS.place}}
-                    </div>
-                    <div class="col-sm-4">
-                        {{'postalCode' | translate}}: {{vm.employeeFullDS.postalCode}}
+                        {{'voivodship' | translate}}: {{vm.employeeFullDS.address.voivodship}}
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-4">
-                        {{'postOffice' | translate}}: {{vm.employeeFullDS.postOffice}}
+                        {{'district' | translate}}: {{vm.employeeFullDS.address.district}}
                     </div>
                     <div class="col-sm-4">
-                        {{'country' | translate}} {{vm.employeeFullDS.country}}
+                        {{'place' | translate}}: {{vm.employeeFullDS.address.place}}
+                    </div>
+                    <div class="col-sm-4">
+                        {{'postalCode' | translate}}: {{vm.employeeFullDS.address.postalCode}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        {{'postOffice' | translate}}: {{vm.employeeFullDS.address.postOffice}}
+                    </div>
+                    <div class="col-sm-4">
+                        {{'country' | translate}} {{vm.employeeFullDS.address.country}}
                     </div>
                     <div class="col-sm-4">
 
@@ -106,6 +106,8 @@
     </div>
 
     <div class="button-bar">
-        <button class="btn btn-secondary" type="button" ng-click="">{{'button.edit' | translate}} </button>
+        <button class="btn btn-primary" type="button" ng-click="vm.editEmployee()">{{'button.edit' | translate}}</button>
+        <button class="btn btn-primary" type="button" ng-click="vm.addEmployee()">{{'button.add' | translate}}</button>
+        <button class="btn btn-secondary" type="button" ng-click="vm.toBack()">{{'button.back' | translate}}</button>
     </div>
 </div>

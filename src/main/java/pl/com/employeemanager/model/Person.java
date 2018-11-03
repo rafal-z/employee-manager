@@ -1,6 +1,9 @@
 
 package pl.com.employeemanager.model;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -30,6 +33,7 @@ public class Person {
 
     @OneToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "LAddressPerson", joinColumns = @JoinColumn(name = "PersonId"), inverseJoinColumns = @JoinColumn(name = "AddressId"))
+    @Fetch(FetchMode.SELECT)
     private List<Address> address;
 
 

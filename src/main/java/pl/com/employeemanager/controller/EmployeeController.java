@@ -33,4 +33,13 @@ public class EmployeeController {
     EmployeeFullDTO getEmployee(@PathVariable("personId") Integer personId){
         return employeeService.getEmployee(personId);
     }
+
+    @RequestMapping(value = "/saveEmployee", method = RequestMethod.POST)
+    public @ResponseBody Integer saveEmployee(@RequestBody EmployeeFullDTO employeeFullDTO){
+        if(employeeFullDTO.getPersonId() == null){
+            return employeeService.saveEmployee(employeeFullDTO);
+        } else {
+            return employeeService.updateEmployee(employeeFullDTO);
+        }
+    }
 }

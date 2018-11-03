@@ -8,15 +8,8 @@ public class EmployeeFullDTO extends EmployeeBaseDTO {
     private Date dob;
     private String placeOfBrith;
 
-    private String street;
-    private Integer homeNo;
-    private Integer flattNo;
-    private String voivodship;
-    private String district;
-    private String place;
-    private String postalCode;
-    private String postOffice;
-    private String country;
+    private AddressDTO address;
+    private AddressDTO correspondenceAddress;
 
     private Double salary;
     private String currency;
@@ -55,76 +48,20 @@ public class EmployeeFullDTO extends EmployeeBaseDTO {
         this.placeOfBrith = placeOfBrith;
     }
 
-    public String getStreet() {
-        return street;
+    public AddressDTO getAddress() {
+        return address;
     }
 
-    public void setStreet(String street) {
-        this.street = street;
+    public void setAddress(AddressDTO address) {
+        this.address = address;
     }
 
-    public Integer getHomeNo() {
-        return homeNo;
+    public AddressDTO getCorrespondenceAddress() {
+        return correspondenceAddress;
     }
 
-    public void setHomeNo(Integer homeNo) {
-        this.homeNo = homeNo;
-    }
-
-    public Integer getFlattNo() {
-        return flattNo;
-    }
-
-    public void setFlattNo(Integer flattNo) {
-        this.flattNo = flattNo;
-    }
-
-    public String getVoivodship() {
-        return voivodship;
-    }
-
-    public void setVoivodship(String voivodship) {
-        this.voivodship = voivodship;
-    }
-
-    public String getDistrict() {
-        return district;
-    }
-
-    public void setDistrict(String district) {
-        this.district = district;
-    }
-
-    public String getPlace() {
-        return place;
-    }
-
-    public void setPlace(String place) {
-        this.place = place;
-    }
-
-    public String getPostalCode() {
-        return postalCode;
-    }
-
-    public void setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
-    }
-
-    public String getPostOffice() {
-        return postOffice;
-    }
-
-    public void setPostOffice(String postOffice) {
-        this.postOffice = postOffice;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
+    public void setCorrespondenceAddress(AddressDTO correspondenceAddress) {
+        this.correspondenceAddress = correspondenceAddress;
     }
 
     public Double getSalary() {

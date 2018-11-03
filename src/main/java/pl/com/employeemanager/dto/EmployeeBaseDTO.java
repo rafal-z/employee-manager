@@ -9,7 +9,7 @@ public class EmployeeBaseDTO {
     private String email;
     private boolean active;
     private String roomNo;
-    private Boolean online;
+    private boolean online;
     private String occupation;
     private String team;
 
@@ -77,11 +77,11 @@ public class EmployeeBaseDTO {
         this.roomNo = roomNo;
     }
 
-    public Boolean getOnline() {
+    public boolean isOnline() {
         return online;
     }
 
-    public void setOnline(Boolean online) {
+    public void setOnline(boolean online) {
         this.online = online;
     }
 

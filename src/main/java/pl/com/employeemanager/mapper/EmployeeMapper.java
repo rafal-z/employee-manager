@@ -43,7 +43,7 @@ public class EmployeeMapper {
         to.setEmail(from.getEmail());
         to.setActive(from.isActive());
         to.setRoomNo(from.getRoomNo());
-        to.setOnline(from.getOnline());
+        to.setOnline(from.isOnline());
         to.setOccupation(from.getOccupation());
         to.setTeam(from.getTeam());
         return to;

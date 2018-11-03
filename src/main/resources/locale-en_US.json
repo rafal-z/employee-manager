@@ -26,5 +26,22 @@
   "dateHired": "Hired date",
   "dateDismissal": "Dismissal date",
   "tooltip.occupation": "Occupation",
-  "tooltip.online.offline": "Online/Offline"
+  "tooltip.online.offline": "Online/Offline",
+  "title.edit": "Edit employee",
+  "title.add": "Add employee",
+  "button.add": "Add employee",
+  "button.back": "Back",
+  "firstName": "Name",
+  "middleName": "Middle name",
+  "lastName": "Last Name",
+  "cellPhone": "Number phone",
+  "email": "E-mail",
+  "homeNo": "House number",
+  "flattNo": "Flat number",
+  "roomNo": "Room number",
+  "occupation": "Occupation",
+  "team": "Team",
+  "active": "Active",
+  "button.save": "Save",
+  "button.cancel": "Cancel"
 }

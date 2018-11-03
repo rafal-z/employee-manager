@@ -12,5 +12,8 @@ function config($routeProvider) {
         .when('/employeeDetails', {
             template: '<employee-details></employee-details>'
         })
+        .when('/editEmployee', {
+            template: '<edit-employee></edit-employee>'
+        })
         .otherwise({redirectTo: '/employeeList'})
 }

@@ -11,4 +11,6 @@ public interface EmployeeService {
     List<Employee> getEmployees();
     List<EmployeeBaseDTO> getEmployees(EmployeeCriteriaDTO criteria);
     EmployeeFullDTO getEmployee(Integer personId);
+    Integer saveEmployee(EmployeeFullDTO employeeFullDTO);
+    Integer updateEmployee(EmployeeFullDTO employeeFullDTO);
 }

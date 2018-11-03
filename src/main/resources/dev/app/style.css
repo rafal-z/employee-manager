@@ -72,3 +72,14 @@ a {
 .button-bar {
     padding: 15px 15px 15px 15px;
 }
+
+.edit-form{
+    width: 70%;
+    margin-left: 10px;
+}
+
+.section-header{
+    border-bottom: 2px solid dodgerblue;
+    margin-left: 2px;
+    width: 60%
+}

@@ -8,8 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import pl.com.employeemanager.dto.EmployeeCriteriaDTO;
+import pl.com.employeemanager.model.Address;
 import pl.com.employeemanager.model.Employee;
 
+import java.util.Date;
 import java.util.List;
 
 @Transactional
@@ -55,5 +57,43 @@ public class EmployeeDAOImpl implements EmployeeDAO{
         Employee employee = (Employee) session.get(Employee.class, personId);
         session.close();
         return employee;
+    }
+
+    public Integer saveEmployee(Employee employee){
+        addLastInsertDateAndPerson(employee);
+        addLastModifiedDateAndPerson(employee);
+        Session session = sessionFactory.openSession();
+        Integer personId = (Integer) session.save(employee);
+        for(Address address: employee.getAddress()){
+            address.setInsertDate(new Date());
+            address.setLastModDate(new Date());
+            session.save(address);
+        }
+        session.flush();
+        session.close();
+        return personId;
+    }
+
+    public Integer updateEmployee(Employee employee){
+        addLastModifiedDateAndPerson(employee);
+        Session session = sessionFactory.openSession();
+        session.saveOrUpdate(employee);
+        for(Address address: employee.getAddress()){
+            address.setLastModDate(new Date());
+            session.saveOrUpdate(address);
+        }
+        session.flush();
+        session.close();
+        return employee.getPersonId();
+    }
+
+    private void addLastInsertDateAndPerson(Employee employee){
+        employee.setLastModDate(new Date());
+//        employee.setLastModPerson(); //TODO
+    }
+
+    private void addLastModifiedDateAndPerson(Employee employee){
+        employee.setLastModDate(new Date());
+//        employee.setLastModPerson(); //TODO
     }
 }

@@ -26,5 +26,22 @@
   "dateHired": "Data zatrudnienia",
   "dateDismissal": "Data wypowiedzenia",
   "tooltip.occupation": "Stanowisko",
-  "tooltip.online.offline": "Online/Offline"
+  "tooltip.online.offline": "Online/Offline",
+  "title.edit": "Edycja pracownika",
+  "title.add": "Dodawanie pracownika",
+  "button.add": "Nowy pracownik",
+  "button.back": "Powrót",
+  "firstName": "Imię",
+  "middleName": "Drugie imię",
+  "lastName": "Nazwisko",
+  "cellPhone": "Numer telefonu",
+  "email": "E-mail",
+  "homeNo": "Numer domu",
+  "flattNo": "Numer mieszkania",
+  "roomNo": "Numer pokoju",
+  "occupation": "Stanowisko",
+  "team": "Zespół",
+  "active": "Aktywny",
+  "button.save": "Zapisz",
+  "button.cancel": "Anuluj"
 }

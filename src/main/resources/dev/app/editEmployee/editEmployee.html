@@ -1,0 +1,110 @@
+<form class="edit-form">
+    <h2>{{vm.title | translate}}</h2>
+
+    <div class="row section-header">
+        <h4>{{'title.personalData' | translate}}</h4>
+    </div>
+    <div class="row">
+        <div class="col-sm-4" >
+            <input-field label="'firstName' | translate" ng-model="vm.employeeDS.firstName"></input-field>
+        </div>
+        <div class="col-sm-4">
+            <input-field label="'middleName' | translate" ng-model="vm.employeeDS.middleName"></input-field>
+        </div>
+        <div class="col-sm-4">
+            <input-field label="'lastName' | translate" ng-model="vm.employeeDS.lastName"></input-field>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <input-field label="'nationalNo' | translate" ng-model="vm.employeeDS.nationalNo"></input-field>
+        </div>
+        <div class="col-sm-4">
+            <input-field label="'sex' | translate" ng-model="vm.employeeDS.sex"></input-field>
+        </div>
+        <div class="col-sm-4">
+            <input-field type="'date'" label="'dob' | translate" ng-model="vm.employeeDS.dob"></input-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <input-field label="'placeOfBrith' | translate" ng-model="vm.employeeDS.placeOfBrith"></input-field>
+        </div>
+        <div class="col-sm-4">
+            <input-field label="'cellPhone' | translate" ng-model="vm.employeeDS.cellPhone"></input-field>
+        </div>
+        <div class="col-sm-4">
+            <input-field label="'email' | translate" ng-model="vm.employeeDS.email"></input-field>
+        </div>
+    </div>
+    <div class="row section-header">
+        <h4>{{'title.address' | translate}}</h4>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <input-field label="'street' | translate" ng-model="vm.employeeDS.address.street"></input-field>
+        </div>
+        <div class="col-sm-2">
+            <input-field label="'homeNo' | translate" ng-model="vm.employeeDS.address.homeNo"></input-field>
+        </div>
+        <div class="col-sm-2">
+            <input-field label="'flattNo' | translate" ng-model="vm.employeeDS.address.flattNo"></input-field>
+        </div>
+        <div class="col-sm-4">
+            <input-field label="'voivodship' | translate" ng-model="vm.employeeDS.address.voivodship"></input-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <input-field label="'district' | translate" ng-model="vm.employeeDS.address.district"></input-field>
+        </div>
+        <div class="col-sm-4">
+            <input-field label="'place' | translate" ng-model="vm.employeeDS.address.place"></input-field>
+        </div>
+        <div class="col-sm-4">
+            <input-field label="'postalCode' | translate" ng-model="vm.employeeDS.address.postalCode"></input-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <input-field label="'postOffice' | translate" ng-model="vm.employeeDS.address.postOffice"></input-field>
+        </div>
+        <div class="col-sm-4">
+            <input-field label="'country' | translate" ng-model="vm.employeeDS.address.country"></input-field>
+        </div>
+    </div>
+    <div class="row section-header">
+        <h4>{{'title.details' | translate}}</h4>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <input-field label="'roomNo' | translate"  ng-model="vm.employeeDS.roomNo"></input-field>
+        </div>
+        <div class="col-sm-4">
+            <input-field label="'salary' | translate"  ng-model="vm.employeeDS.salary"></input-field>
+        </div>
+        <div class="col-sm-4">
+            <input-field label="'occupation' | translate"  ng-model="vm.employeeDS.occupation"></input-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <input-field label="'team' | translate" ng-model="vm.employeeDS.team"></input-field>
+        </div>
+        <div class="col-sm-4">
+            <input-field type="'date'" label="'dateHired' | translate" ng-model="vm.employeeDS.dateHired"></input-field>
+        </div>
+        <div class="col-sm-4">
+            <input-field type="'date'" label="'dateDismissal' | translate" ng-model="vm.employeeDS.dateDismissal"></input-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <input type="checkbox" ng-model="vm.employeeDS.active"> {{'active' | translate}}
+        </div>
+    </div>
+
+    <button class="btn btn-success" type="button" ng-click="vm.submit()">{{'button.save' | translate}}</button>
+    <button class="btn btn-secondary" type="button" ng-click="vm.cancel()">{{'button.cancel' | translate}}</button>
+</form>

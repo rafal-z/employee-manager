@@ -39,4 +39,16 @@ public class EmployeeServiceImpl implements EmployeeService {
         Employee employee = employeeDAO.getEmployee(personId);
         return employeeFullDTOMapper.repack(employee);
     }
+
+    @Override
+    public Integer saveEmployee(EmployeeFullDTO employeeFullDTO){
+        Employee employee = employeeFullDTOMapper.pack(employeeFullDTO);
+        return employeeDAO.saveEmployee(employee);
+    }
+
+    @Override
+    public Integer updateEmployee(EmployeeFullDTO employeeFullDTO){
+        Employee employee = employeeFullDTOMapper.pack(employeeFullDTO);
+        return employeeDAO.updateEmployee(employee);
+    }
 }

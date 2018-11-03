@@ -8,8 +8,17 @@ function employeeService($http) {
     vm.getEmployeeById = getEmployeeById;
     vm.setPersonId = setPersonId;
     vm.getPersonId = getPersonId;
+    vm.saveEmployee = saveEmployee;
 
     vm.personId = null;
+
+    function setPersonId(personId) {
+        vm.personId = personId;
+    }
+
+    function getPersonId() {
+        return vm.personId;
+    }
 
     function getEmployees(crit) {
         return $http.post('/employee-manager/application/employee', crit);
@@ -19,11 +28,7 @@ function employeeService($http) {
         return $http.get('/employee-manager/application/employee/' + personId);
     }
 
-    function setPersonId(personId) {
-        vm.personId = personId;
-    }
-
-    function getPersonId() {
-        return vm.personId;
+    function saveEmployee(employee) {
+        return $http.post('/employee-manager/application/saveEmployee', employee);
     }
 }

@@ -6,8 +6,6 @@ import java.util.Date;
 @Entity
 public class Employee extends Person{
 
-    private Integer employeeId;
-
     private boolean active;
     private String roomNo;
     private boolean online;
@@ -22,14 +20,6 @@ public class Employee extends Person{
     private Date lastModDate;
     private Integer lastModPerson;
 
-
-    public Integer getEmployeeId() {
-        return employeeId;
-    }
-
-    public void setEmployeeId(Integer employeeId) {
-        this.employeeId = employeeId;
-    }
 
     public boolean isActive() {
         return active;

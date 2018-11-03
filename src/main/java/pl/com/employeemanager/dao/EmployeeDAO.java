@@ -9,4 +9,6 @@ public interface EmployeeDAO {
     List<Employee> list();
     List<Employee> getEmployees(EmployeeCriteriaDTO criteria);
     Employee getEmployee(Integer personId);
+    Integer saveEmployee(Employee employee);
+    Integer updateEmployee(Employee employee);
 }

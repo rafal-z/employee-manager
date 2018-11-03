@@ -8,7 +8,7 @@ var merge = require('merge-stream');
 var appDistDir = './../../webapp/app/';
 
 gulp.task('watch', function () {
-    watch(["app/**/*.html", "app/**/*.js", "app/**/*.css"], batch(function (events, done) {
+    watch(["app/**/*.html", "app/**/*.js", "app/**/*.css", "../*.json"], batch(function (events, done) {
         gulp.start('build-debug', done);
     }));
 });
