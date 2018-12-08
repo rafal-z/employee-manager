@@ -5,5 +5,6 @@ angular.module('employee-manager', [
     'pascalprecht.translate',
     'em.search',
     'em.employee',
-    'em.common'
+    'em.common',
+    'http-auth-interceptor'
 ]);

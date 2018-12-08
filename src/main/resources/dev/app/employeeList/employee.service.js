@@ -21,14 +21,14 @@ function employeeService($http) {
     }
 
     function getEmployees(crit) {
-        return $http.post('/employee-manager/application/employee', crit);
+        return $http.post('/employee-manager/employee', crit);
     }
 
     function getEmployeeById(personId) {
-        return $http.get('/employee-manager/application/employee/' + personId);
+        return $http.get('/employee-manager/employee/' + personId);
     }
 
     function saveEmployee(employee) {
-        return $http.post('/employee-manager/application/saveEmployee', employee);
+        return $http.post('/employee-manager/saveEmployee', employee);
     }
 }

@@ -16,7 +16,7 @@ public class PersonController {
     @Autowired
     private PersonService personService;
 
-    @RequestMapping(value = "/users", method = RequestMethod.GET)
+    @RequestMapping(value = "/usersXxX", method = RequestMethod.GET)
     public @ResponseBody
     List<Person> getUsers() {
         List<Person> list = personService.getUsers();

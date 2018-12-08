@@ -82,6 +82,48 @@ CREATE TABLE Employee (
 );
 
 
+CREATE TABLE Users (
+	UserID serial NOT NULL,
+	Email varchar NOT NULL,
+	Login varchar NOT NULL,
+	Password varchar NOT NULL,
+	InsertDate TIMESTAMP,
+	InsertingPerson integer,
+	LastModDate TIMESTAMP,
+	LastModPerson integer,
+	Active BOOLEAN,
+	CONSTRAINT User_pk PRIMARY KEY (UserID)
+) WITH (
+  OIDS=FALSE
+);
+
+
+
+CREATE TABLE Authority (
+	AuthorityID serial NOT NULL,
+	Name varchar NOT NULL,
+	CONSTRAINT Authority_pk PRIMARY KEY (AuthorityID)
+) WITH (
+  OIDS=FALSE
+);
+
+
+
+CREATE TABLE UserAuthority (
+	UserAuthorityID serial NOT NULL,
+	UserID integer NOT NULL,
+	AuthorityID integer NOT NULL,
+	Active BOOLEAN,
+	InsertDate TIMESTAMP,
+	InsertingPerson integer,
+	LastModDate TIMESTAMP,
+	LastModPerson integer,
+	CONSTRAINT UserAuthority_pk PRIMARY KEY (UserAuthorityID)
+) WITH (
+  OIDS=FALSE
+);
+
+
 
 ALTER TABLE Person ADD CONSTRAINT Person_fk0 FOREIGN KEY (InsertingPerson) REFERENCES Person(PersonID);
 ALTER TABLE Person ADD CONSTRAINT Person_fk1 FOREIGN KEY (LastModPerson) REFERENCES Person(PersonID);
@@ -98,3 +140,5 @@ ALTER TABLE Employee ADD CONSTRAINT Employee_fk0 FOREIGN KEY (PersonID) REFERENC
 ALTER TABLE Employee ADD CONSTRAINT Employee_fk1 FOREIGN KEY (InsertingPerson) REFERENCES Person(PersonID);
 ALTER TABLE Employee ADD CONSTRAINT Employee_fk2 FOREIGN KEY (LastModPerson) REFERENCES Person(PersonID);
 
+ALTER TABLE UserAuthority ADD CONSTRAINT UserAuthority_fk0 FOREIGN KEY (UserID) REFERENCES Users(UserID);
+ALTER TABLE UserAuthority ADD CONSTRAINT UserAuthority_fk1 FOREIGN KEY (AuthorityID) REFERENCES Authority(AuthorityID);
