@@ -13,6 +13,7 @@ public class User {
     private String email;
     private String login;
     private String password;
+    private Date ExpiredPassword;
     private boolean active;
     private Date InsertDate;
     private Integer insertingPerson;
@@ -22,6 +23,10 @@ public class User {
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "UserAuthority", joinColumns = @JoinColumn(name = "UserID"), inverseJoinColumns = @JoinColumn(name = "AuthorityID"))
     private Set<Authority> authorities;
+
+    @OneToOne
+    @JoinColumn(name = "PersonID")
+    private Person person;
 
     public Integer getUserId() {
         return userId;
@@ -53,6 +58,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Date getExpiredPassword() {
+        return ExpiredPassword;
+    }
+
+    public void setExpiredPassword(Date expiredPassword) {
+        ExpiredPassword = expiredPassword;
     }
 
     public boolean isActive() {
@@ -101,5 +114,13 @@ public class User {
 
     public void setAuthorities(Set<Authority> authorities) {
         this.authorities = authorities;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
     }
 }

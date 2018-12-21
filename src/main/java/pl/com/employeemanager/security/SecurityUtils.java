@@ -5,6 +5,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import pl.com.employeemanager.exception.Error;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -49,7 +50,8 @@ public final class SecurityUtils {
         response.setContentType("application/json;charset=UTF-8");
         response.setStatus(status);
         PrintWriter writer = response.getWriter();
-        writer.write(mapper.writeValueAsString(status + " - " + message + ". " + exception.getMessage()));
+        Error error = new Error("authError", exception.getMessage());
+        writer.write(mapper.writeValueAsString(error));
         writer.flush();
         writer.close();
     }

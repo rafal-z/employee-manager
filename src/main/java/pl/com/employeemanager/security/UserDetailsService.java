@@ -7,12 +7,15 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+import pl.com.employeemanager.exception.ExpiredPasswordException;
+import pl.com.employeemanager.exception.UserNotActiveException;
 import pl.com.employeemanager.model.Authority;
 import pl.com.employeemanager.model.User;
 import pl.com.employeemanager.service.UserService;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 
 
 @Component("userDetailsService")
@@ -29,7 +32,9 @@ public class UserDetailsService implements org.springframework.security.core.use
         if (user == null) {
             throw new UsernameNotFoundException("User " + login + " was not found in the database");
         } else if (!user.isActive()) {
-            throw new UsernameNotFoundException("User " + login + " was not active");
+            throw new UserNotActiveException("User " + login + " was not active");
+        } else if ( (user.getExpiredPassword() != null) && (new Date().after(user.getExpiredPassword())) ){
+            throw new ExpiredPasswordException("Password expired");
         }
 
         Collection<GrantedAuthority> grantedAuthorities = new ArrayList<GrantedAuthority>();

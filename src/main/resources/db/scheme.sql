@@ -84,9 +84,11 @@ CREATE TABLE Employee (
 
 CREATE TABLE Users (
 	UserID serial NOT NULL,
+	PersonID integer NOT NULL,
 	Email varchar NOT NULL,
 	Login varchar NOT NULL,
 	Password varchar NOT NULL,
+	ExpiredPassword TIMESTAMP,
 	InsertDate TIMESTAMP,
 	InsertingPerson integer,
 	LastModDate TIMESTAMP,
@@ -139,6 +141,8 @@ ALTER TABLE LAddressPerson ADD CONSTRAINT LAddressPerson_fk3 FOREIGN KEY (LastMo
 ALTER TABLE Employee ADD CONSTRAINT Employee_fk0 FOREIGN KEY (PersonID) REFERENCES Person(PersonID);
 ALTER TABLE Employee ADD CONSTRAINT Employee_fk1 FOREIGN KEY (InsertingPerson) REFERENCES Person(PersonID);
 ALTER TABLE Employee ADD CONSTRAINT Employee_fk2 FOREIGN KEY (LastModPerson) REFERENCES Person(PersonID);
+
+ALTER TABLE Users ADD CONSTRAINT User_fk0 FOREIGN KEY (PersonID) REFERENCES Person(PersonID);
 
 ALTER TABLE UserAuthority ADD CONSTRAINT UserAuthority_fk0 FOREIGN KEY (UserID) REFERENCES Users(UserID);
 ALTER TABLE UserAuthority ADD CONSTRAINT UserAuthority_fk1 FOREIGN KEY (AuthorityID) REFERENCES Authority(AuthorityID);
