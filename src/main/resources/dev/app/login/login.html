@@ -4,18 +4,18 @@
         <p id="profile-name" class="profile-name-card"></p>
         <form name="loginform" class="form-signin" ng-submit="loginController.login()">
             <span id="reauth-email" class="reauth-email"></span>
-            <div class="login-error" >{{errorMessage.$$state.value}}</div>
-            <input ng-model="loginController.userName" type="text" id="inputEmail" class="form-control" placeholder="Adres email" required autofocus>
-            <input ng-model="loginController.password" type="password" id="inputPassword" class="form-control" placeholder="Hasło" required>
+            <div class="login-error" >{{loginController.errorMessage}}</div>
+            <input ng-model="loginController.userName" type="text" id="inputEmail" class="form-control" placeholder="{{'login.email' | translate}}" required autofocus>
+            <input ng-model="loginController.password" type="password" id="inputPassword" class="form-control" placeholder="{{'login.password' | translate}}" required>
             <div id="remember" class="checkbox">
                 <label>
-                    <input type="checkbox" value="remember-me"> zapamiętaj mnie
+                    <input type="checkbox" value="remember-me"> {{'login.rememberMe' | translate}}
                 </label>
             </div>
-            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Zaloguj</button>
+            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">{{'button.login' | translate}}</button>
         </form>
         <a href="#" class="forgot-password">
-            Zapomniałeś hasła?
+            {{'button.forgottenPassWord' | translate}}
         </a>
     </div>
 </div>

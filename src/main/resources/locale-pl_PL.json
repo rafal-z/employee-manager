@@ -43,5 +43,13 @@
   "team": "Zespół",
   "active": "Aktywny",
   "button.save": "Zapisz",
-  "button.cancel": "Anuluj"
+  "button.cancel": "Anuluj",
+  "login.error.badCredentials": "Login lub hasło niepoprawne.",
+  "login.error.notActiveUser": "Konto użytkownika jest nieaktywne. Skontaktuj się z Administratorem.",
+  "login.error.expiredPassword": "Hasło wygasło. Zmień teraz.",
+  "button.login": "Zaloguj",
+  "login.rememberMe": "zapamiętaj mnie",
+  "login.email": "Adres e-mail",
+  "login.password": "Hasło",
+  "button.forgottenPassWord": "Zapomniałeś hasła?"
 }

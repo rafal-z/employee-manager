@@ -30,9 +30,9 @@ public class UserDetailsService implements org.springframework.security.core.use
 
         User user = userService.getUserByLogin(login);
         if (user == null) {
-            throw new UsernameNotFoundException("User " + login + " was not found in the database");
+            throw new UsernameNotFoundException("User was not found in the database");
         } else if (!user.isActive()) {
-            throw new UserNotActiveException("User " + login + " was not active");
+            throw new UserNotActiveException("User was not active");
         } else if ( (user.getExpiredPassword() != null) && (new Date().after(user.getExpiredPassword())) ){
             throw new ExpiredPasswordException("Password expired");
         }

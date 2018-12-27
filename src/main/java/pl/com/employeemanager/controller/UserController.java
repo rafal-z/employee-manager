@@ -1,13 +1,9 @@
 package pl.com.employeemanager.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.context.SecurityContext;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
-import pl.com.employeemanager.model.Authority;
 import pl.com.employeemanager.model.User;
 import pl.com.employeemanager.service.UserService;
 
@@ -31,6 +27,20 @@ public class UserController {
     public @ResponseBody
     Object saveUser(@RequestBody Object user) {
         return null;
+    }
+
+    @RequestMapping(value = "/roles", method = RequestMethod.GET)
+    public List<String> getRoles(HttpSession session) {
+        SecurityContext context = (SecurityContext) session.getAttribute("SPRING_SECURITY_CONTEXT");
+        List<GrantedAuthority> grantedAuthorities = (List<GrantedAuthority>) context.getAuthentication().getAuthorities();
+        if(grantedAuthorities == null) {
+            return null;
+        }
+        List<String> authorities = new ArrayList<>();
+        for (GrantedAuthority authority : grantedAuthorities) {
+            authorities.add(authority.getAuthority());
+        }
+        return authorities;
     }
 }
 

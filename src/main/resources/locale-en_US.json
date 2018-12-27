@@ -43,5 +43,13 @@
   "team": "Team",
   "active": "Active",
   "button.save": "Save",
-  "button.cancel": "Cancel"
+  "button.cancel": "Cancel",
+  "login.error.badCredentials": "Login or password incorrect.",
+  "login.error.notActiveUser": "The user account is inactive. Contact the Administrator.",
+  "login.error.expiredPassword": "The password has expired. Change now.",
+  "button.login": "Log in",
+  "login.rememberMe": "remember me",
+  "login.email": "E-mail address",
+  "login.password": "Password",
+  "button.forgottenPassWord": "Have you forgotten your password?"
 }

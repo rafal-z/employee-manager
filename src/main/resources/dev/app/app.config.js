@@ -13,13 +13,19 @@ var app = angular.module('employee-manager')
 app.run(function ($rootScope, $location, $http, loginService) {
 
     $rootScope.$on('$routeChangeStart', function (event, next) {
-        if (next.access && next.access.loginRequired && !$rootScope.authenticated) {
-            event.preventDefault();
-            $rootScope.$broadcast("event:auth-loginRequired", {});
-        } else if(next.access && !loginService.isAuthorized(next.access.authorizedRoles)){
-            event.preventDefault();
-            $rootScope.$broadcast("event:auth-forbidden", {});
-        }
+        loginService.isAuthenticated().success(function (value) {
+            $rootScope.authenticated = value;
+
+            if(next.originalPath === "/login" && $rootScope.authenticated){
+                event.preventDefault();
+            }else if (next.access && next.access.loginRequired && !$rootScope.authenticated) {
+                event.preventDefault();
+                $rootScope.$broadcast("event:auth-loginRequired", {});
+            } else if(next.access && !loginService.hasAnyRoles(next.access.authorizedRoles)){
+                event.preventDefault();
+                $rootScope.$broadcast("event:auth-forbidden", {});
+            }
+        });
     });
 
     $rootScope.$on('event:auth-loginRequired', function (event, data) {
@@ -29,7 +35,7 @@ app.run(function ($rootScope, $location, $http, loginService) {
 
     $rootScope.$on('event:auth-loginConfirmed', function (event, data) {
         $rootScope.authenticated = true;
-        var nextLocation = $rootScope.requestedUrl ? $rootScope.requestedUrl : "/employeeList";
+        var nextLocation = ($rootScope.requestedUrl && $rootScope.requestedUrl !=='/login') ? $rootScope.requestedUrl : "/employeeList";
         $location.path(nextLocation).replace();
     });
 
