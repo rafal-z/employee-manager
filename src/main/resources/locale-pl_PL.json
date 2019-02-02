@@ -63,5 +63,8 @@
   "login.password.info": "Pamiętaj! Hasło musi: <br> - składać się przynajmniej z sześciu znaków <br> - zawierać przynajmniej jedną cyfrę <br> - zawierać przynajmniej jeden znak specjalny tj.: .,<>?/;:'{}[]!@#$%^&*()",
   "changePassword.notMeetsRequirements": "Nowe hasło nie spełnia podstawowych wymagań",
   "changePassword.invalidOldPassword": "Stare hasło jest niepoprawne",
-  "changePassword.canNotBeEqual": "Nowe hasło musi różnić się od starego hasła"
+  "changePassword.canNotBeEqual": "Nowe hasło musi różnić się od starego hasła",
+  "changePassword.success": "Hasło zostało zmienione",
+  "internalServerError": "Wystąpił wewnętrzny błąd serwera"
+
 }

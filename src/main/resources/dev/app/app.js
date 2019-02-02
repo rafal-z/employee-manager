@@ -6,6 +6,7 @@ angular.module('employee-manager', [
     'em.search',
     'em.employee',
     'em.common',
+    'em.main',
     'http-auth-interceptor',
     'ui.bootstrap',
     'angularjsToast'

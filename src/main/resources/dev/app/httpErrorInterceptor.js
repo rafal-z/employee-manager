@@ -1,10 +1,14 @@
 var app = angular.module('employee-manager');
 
-app.factory('httpInterceptor', function ($q) {
+app.constant('httpInterceptorEvent', {
+    INTERNAL_ERROR_EVENT: 'internalServerError'
+});
+
+app.factory('httpInterceptor', function ($rootScope, $q, httpInterceptorEvent) {
     return {
         'responseError': function (response) {
             if(response.status === 500){
-                // TODO broadcast z eventem
+                $rootScope.$broadcast(httpInterceptorEvent.INTERNAL_ERROR_EVENT);
             }
             return $q.reject(response);
         }

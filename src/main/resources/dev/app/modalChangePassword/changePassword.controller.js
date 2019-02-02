@@ -2,7 +2,7 @@ angular
     .module('em.employee')
     .controller('changePasswordController', changePasswordController);
 
-function changePasswordController($uibModalInstance, $filter, loginService, contextLogin) {
+function changePasswordController($uibModalInstance, $filter, loginService, contextLogin, toastService) {
     var vm = this;
     vm.submit = submit;
     vm.close = close;
@@ -28,11 +28,10 @@ function changePasswordController($uibModalInstance, $filter, loginService, cont
 
     function success() {
         $uibModalInstance.dismiss('success');
-        // TODO toast o powodzeniu zmiany hasła
+        toastService.showSuccessToast($filter('translate')('changePassword.success'));
     }
 
     function error(error) {
-        console.log(error);
         switch (error.data.reason){
             case 'PASSWORD_NOT_MEETS_REQUIREMENTS':
                 vm.errorMessage = $filter('translate')('changePassword.notMeetsRequirements');

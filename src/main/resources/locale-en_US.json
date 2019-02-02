@@ -58,4 +58,9 @@
   "title.changePassword": "Change password",
   "differentPassword": "The passwords differ",
   "login.password.info": "Remember! <br> The password must: <br> - consist of at least six characters <br> - contain at least one digit <br> - contain at least one special character, ie: .,<>?/;:'{}[]!@#$%^&*()"
+  "changePassword.notMeetsRequirements": "The new password does not meet the basic requirements",
+  "changePassword.invalidOldPassword": "The old password is incorrect",
+  "changePassword.canNotBeEqual": "The new password must be different from the old password",
+  "changePassword.success": "Password has been changed",
+  "internalServerError": "Internal Server Error"
 }

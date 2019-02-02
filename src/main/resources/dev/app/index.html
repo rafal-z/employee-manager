@@ -6,7 +6,7 @@
     </head>
     <body>
         <div ng-if="authenticated" ng-include="'app/nav/navbar.html'"></div>
-        <div ng-view=""></div>
+        <div ng-controller="mainController" ng-view=""></div>
 
         <!--AngularJS-->
         <script src="https://code.angularjs.org/1.5.11/angular.js"></script>
