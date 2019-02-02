@@ -6,5 +6,6 @@ angular.module('employee-manager', [
     'em.search',
     'em.employee',
     'em.common',
-    'http-auth-interceptor'
+    'http-auth-interceptor',
+    'ui.bootstrap'
 ]);

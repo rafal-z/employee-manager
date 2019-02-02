@@ -4,6 +4,7 @@
         <link rel="stylesheet" href="app/app.css"/>
     </head>
     <body>
+        <div ng-if="authenticated" ng-include="'app/nav/navbar.html'"></div>
         <div ng-view=""></div>
 
         <script src="https://code.angularjs.org/1.5.11/angular.js"></script>
@@ -12,6 +13,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.18.1/angular-translate-loader-url/angular-translate-loader-url.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.18.1/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.18.1/angular-translate-loader-partial/angular-translate-loader-partial.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
 
         <script src="app/app.js"></script>
     </body>

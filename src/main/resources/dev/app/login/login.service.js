@@ -2,14 +2,19 @@ angular
     .module('em.employee')
     .service('loginService', loginService);
 
-function loginService($rootScope, $http, $filter, authService) {
+function loginService($rootScope, $http, $filter, $q, authService) {
     var vm = this;
 
     vm.login = login;
     vm.hasAnyRoles = hasAnyRoles;
     vm.isAuthenticated = isAuthenticated;
+    vm.logout = logout;
+    vm.changeUserPassword = changeUserPassword;
 
-    vm.roles = null;
+    vm.user = {
+        login: null,
+        roles: null
+    };
     vm.errorMessage = null;
 
     function login(userName, password) {
@@ -21,7 +26,8 @@ function loginService($rootScope, $http, $filter, authService) {
         return $http.post('authenticate', param, config)
             .success(function (data) {
                 vm.errorMessage = null;
-                vm.roles = data;
+                vm.user.login = userName;
+                vm.user.roles = data;
                 authService.loginConfirmed(data);
             })
             .error(function (data) {
@@ -43,9 +49,9 @@ function loginService($rootScope, $http, $filter, authService) {
 
     function hasAnyRoles(roles) {
         var hasRole = false;
-        if(vm.roles) {
+        if(vm.user.roles) {
             angular.forEach(roles, function (value) {
-                if (vm.roles.indexOf(value) !== -1) {
+                if (vm.user.roles.indexOf(value) !== -1) {
                     hasRole = true;
                 }
             })
@@ -54,12 +60,32 @@ function loginService($rootScope, $http, $filter, authService) {
     }
 
     function isAuthenticated() {
-        return $http.get('/employee-manager/roles').success(function (data) {
-            if (data === null)
-                return false;
+        $http.get('/employee-manager/user').success(function (data) {
+            vm.user.login = data.login;
+            vm.user.roles = data.authorities;
+            authService.loginConfirmed(data);
+        });
+    }
 
-            vm.roles = data;
-            return true;
+    function logout() {
+        $http.get('logout').then(function (value) {
+            $rootScope.authenticated = false;
+            vm.user = {login: null, roles: null};
+            authService.loginCancelled();
+        });
+    }
+
+    function changeUserPassword(login, newPassword, oldPassword) {
+        var data = {
+            login: login,
+            newPassword: newPassword,
+            oldPassword: oldPassword
+        };
+        return $http({
+            method: 'POST',
+            url: '/employee-manager/user/changePassword',
+            headers: {'Content-Type': 'application/json'},
+            params: data
         });
     }
 }

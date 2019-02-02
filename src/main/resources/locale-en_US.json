@@ -46,10 +46,16 @@
   "button.cancel": "Cancel",
   "login.error.badCredentials": "Login or password incorrect.",
   "login.error.notActiveUser": "The user account is inactive. Contact the Administrator.",
-  "login.error.expiredPassword": "The password has expired. Change now.",
+  "login.error.expiredPassword": "The password has expired. Change them to access your account.",
   "button.login": "Log in",
   "login.rememberMe": "remember me",
   "login.email": "E-mail address",
   "login.password": "Password",
-  "button.forgottenPassWord": "Have you forgotten your password?"
+  "button.forgottenPassword": "Have you forgotten your password?",
+  "logout": "Logout",
+  "newPassword": "New password",
+  "confirmedPassword": "Confirmed password",
+  "title.changePassword": "Change password",
+  "differentPassword": "The passwords differ",
+  "login.password.info": "Remember! <br> The password must: <br> - consist of at least six characters <br> - contain at least one digit <br> - contain at least one special character, ie: .,<>?/;:'{}[]!@#$%^&*()"
 }

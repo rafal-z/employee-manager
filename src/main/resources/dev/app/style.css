@@ -1,3 +1,7 @@
+body {
+    padding-top: 50px;
+}
+
 .employee-maneger-body {
     background-color: #bfc2c4;
     height: 100%;
@@ -6,7 +10,8 @@
 .container-search {
     width: 50%;
     padding-left: 15px;
-    padding-right: 15px
+    padding-right: 15px;
+    padding-top: 15px;
 }
 
 /*------->Data panel<--------*/
@@ -197,8 +202,51 @@ a {
     color: rgb(12, 97, 33);
 }
 
-.login-error{
+.error-message{
     color: red;
     padding-bottom: 5px;
 }
-/*------------------Login Form-------------------------*/
+/*------------------Login Form END-------------------------*/
+
+.navigation-bar {
+    background-color: #337ab7;
+    height: 50px;
+    width: 100%;
+}
+
+.glyphicon-home{
+    font-size: large;
+    color: white !important;
+}
+
+.nav-a {
+    color: white !important;
+}
+
+.profile-img-nav {
+    width: 35px;
+    height: 35px;
+    margin-top: 7px;
+    cursor: pointer;
+}
+.profile-dropdown {
+    padding-right: 30px;
+}
+
+.dropdown-profile-name {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+
+.modal-content {
+    background: #edeff0;
+}
+
+.info-container {
+    padding: 5px;
+    margin-bottom: 10px;
+    background-color: #faffbd;
+    border-radius: 5px;
+}

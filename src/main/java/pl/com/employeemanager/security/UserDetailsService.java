@@ -28,7 +28,7 @@ public class UserDetailsService implements org.springframework.security.core.use
     @Transactional
     public UserDetails loadUserByUsername(final String login) {
 
-        User user = userService.getUserByLogin(login);
+        User user = userService.getUserEntity(login);
         if (user == null) {
             throw new UsernameNotFoundException("User was not found in the database");
         } else if (!user.isActive()) {

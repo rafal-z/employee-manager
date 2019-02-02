@@ -22,4 +22,13 @@ public class UserDAOImpl implements UserDAO{
         session.close();
         return user;
     }
+
+    @Override
+    public Integer updateUser(User user){
+        Session session = sessionFactory.openSession();
+        session.saveOrUpdate(user);
+        session.flush();
+        session.close();
+        return user.getUserId();
+    }
 }

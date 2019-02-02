@@ -46,10 +46,19 @@
   "button.cancel": "Anuluj",
   "login.error.badCredentials": "Login lub hasło niepoprawne.",
   "login.error.notActiveUser": "Konto użytkownika jest nieaktywne. Skontaktuj się z Administratorem.",
-  "login.error.expiredPassword": "Hasło wygasło. Zmień teraz.",
+  "login.error.expiredPassword": "Hasło wygasło. Zmień je, aby odzyskać dostęp do konta.",
   "button.login": "Zaloguj",
   "login.rememberMe": "zapamiętaj mnie",
   "login.email": "Adres e-mail",
   "login.password": "Hasło",
-  "button.forgottenPassWord": "Zapomniałeś hasła?"
+  "button.forgottenPassword": "Zapomniałeś hasła?",
+  "logout": "Wyloguj",
+  "newPassword": "Nowe hasło",
+  "confirmedPassword": "Potwierdź hasło",
+  "title.changePassword": "Zmiana hasła",
+  "differentPassword": "Hasła się różnią",
+  "equalsPassword": "Nowe hasło musi różnić się od starego hasła",
+  "button.changePassword": "Zmień hasło",
+  "login.userName": "Nazwa użytkownika",
+  "login.password.info": "Pamiętaj! Hasło musi: <br> - składać się przynajmniej z sześciu znaków <br> - zawierać przynajmniej jedną cyfrę <br> - zawierać przynajmniej jeden znak specjalny tj.: .,<>?/;:'{}[]!@#$%^&*()"
 }

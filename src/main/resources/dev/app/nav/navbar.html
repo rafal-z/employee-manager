@@ -1,0 +1,27 @@
+<div ng-controller = "navbarController as navbarController" class="navigation-bar navbar-default navbar-fixed-top" >
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+        <ul class="nav navbar-nav">
+            <li><a href="#/employeeList" class="glyphicon glyphicon-home"></a></li>
+            <li><a href="#" class="nav-a">Example</a></li>
+            <li><a href="#" class="nav-a">EXA ple</a></li>
+            <li><a href="#" class="nav-a">Example1</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="profile-dropdown dropdown">
+                <div data-toggle="dropdown">
+                    <img class="profile-img-nav img-circle" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+                </div>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-profile-name">{{navbarController.userInfos.firstName}} {{navbarController.userInfos.lastName}} ({{navbarController.userInfos.login | uppercase}})</li>
+                    <li class="divider"></li>
+                    <li ng-click="navbarController.openChangePasswordModal()">
+                        <a href="#"><i class="glyphicon glyphicon-lock"></i> {{'button.changePassword' | translate}} </a>
+                    </li>
+                    <li ng-click="navbarController.logout()">
+                        <a href="#"><i class="glyphicon glyphicon-off"></i> {{'logout' | translate}}</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>

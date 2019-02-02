@@ -4,7 +4,7 @@
         <p id="profile-name" class="profile-name-card"></p>
         <form name="loginform" class="form-signin" ng-submit="loginController.login()">
             <span id="reauth-email" class="reauth-email"></span>
-            <div class="login-error" >{{loginController.errorMessage}}</div>
+            <div class="error-message" >{{loginController.errorMessage}}</div>
             <input ng-model="loginController.userName" type="text" id="inputEmail" class="form-control" placeholder="{{'login.email' | translate}}" required autofocus>
             <input ng-model="loginController.password" type="password" id="inputPassword" class="form-control" placeholder="{{'login.password' | translate}}" required>
             <div id="remember" class="checkbox">
@@ -14,8 +14,11 @@
             </div>
             <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">{{'button.login' | translate}}</button>
         </form>
-        <a href="#" class="forgot-password">
-            {{'button.forgottenPassWord' | translate}}
+        <!--<a href="#" class="forgot-password">-->
+            <!--{{'button.forgottenPassword' | translate}}-->
+        <!--</a>-->
+        <a ng-controller="navbarController as navbarController" ng-click="navbarController.openChangePasswordModal(true)" href="#" class="forgot-password">
+            {{'button.changePassword' | translate}}
         </a>
     </div>
 </div>
