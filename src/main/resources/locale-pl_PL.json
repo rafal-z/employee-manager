@@ -60,5 +60,8 @@
   "equalsPassword": "Nowe hasło musi różnić się od starego hasła",
   "button.changePassword": "Zmień hasło",
   "login.userName": "Nazwa użytkownika",
-  "login.password.info": "Pamiętaj! Hasło musi: <br> - składać się przynajmniej z sześciu znaków <br> - zawierać przynajmniej jedną cyfrę <br> - zawierać przynajmniej jeden znak specjalny tj.: .,<>?/;:'{}[]!@#$%^&*()"
+  "login.password.info": "Pamiętaj! Hasło musi: <br> - składać się przynajmniej z sześciu znaków <br> - zawierać przynajmniej jedną cyfrę <br> - zawierać przynajmniej jeden znak specjalny tj.: .,<>?/;:'{}[]!@#$%^&*()",
+  "changePassword.notMeetsRequirements": "Nowe hasło nie spełnia podstawowych wymagań",
+  "changePassword.invalidOldPassword": "Stare hasło jest niepoprawne",
+  "changePassword.canNotBeEqual": "Nowe hasło musi różnić się od starego hasła"
 }

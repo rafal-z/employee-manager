@@ -28,10 +28,22 @@ function changePasswordController($uibModalInstance, $filter, loginService, cont
 
     function success() {
         $uibModalInstance.dismiss('success');
+        // TODO toast o powodzeniu zmiany hasła
     }
 
     function error(error) {
         console.log(error);
+        switch (error.data.reason){
+            case 'PASSWORD_NOT_MEETS_REQUIREMENTS':
+                vm.errorMessage = $filter('translate')('changePassword.notMeetsRequirements');
+                break;
+            case 'INVALID_OLD_PASSWORD':
+                vm.errorMessage = $filter('translate')('changePassword.invalidOldPassword');
+                break;
+            case 'PASSWORDS_CAN_NOT_BE_EQUAL':
+                vm.errorMessage = $filter('translate')('changePassword.canNotBeEqual');
+                break;
+        }
     }
 
     function submit() {

@@ -5,7 +5,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import pl.com.employeemanager.dto.UserDTO;
-import pl.com.employeemanager.exception.CanNotBeEqualsPasswordsException;
+import pl.com.employeemanager.exception.PasswordsCanNotBeEqualException;
 import pl.com.employeemanager.exception.InvalidOldPasswordException;
 import pl.com.employeemanager.exception.PasswordNotMeetsRequirementsException;
 import pl.com.employeemanager.service.UserService;
@@ -58,7 +58,7 @@ public class UserController {
         if (!userService.validatePassword(user, oldPassword)) {
             throw new InvalidOldPasswordException();
         } else if(userService.validatePassword(user, newPassword)) {
-            throw new CanNotBeEqualsPasswordsException();
+            throw new PasswordsCanNotBeEqualException();
         } else if(!userService.passwordMeetsMinimumRequirements(newPassword)) {
             throw new PasswordNotMeetsRequirementsException();
         }
